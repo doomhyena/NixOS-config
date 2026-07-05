@@ -34,6 +34,7 @@
     libreoffice
     claude-code
     spotify
+    btop
   ];
 
   programs.java = {
