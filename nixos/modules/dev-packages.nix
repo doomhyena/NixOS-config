@@ -35,6 +35,8 @@
     claude-code
     spotify
     btop
+    vencord
+    cmatrix
   ];
 
   programs.java = {
