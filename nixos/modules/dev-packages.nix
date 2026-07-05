@@ -32,6 +32,8 @@
     spicetify-cli
     winboat
     libreoffice
+    claude-code
+    spotify
   ];
 
   programs.java = {
