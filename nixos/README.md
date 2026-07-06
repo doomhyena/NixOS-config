@@ -31,14 +31,19 @@ Alaprendszer beállítások:
 
 ### `modules/hardware.nix`
 Hardver konfiguráció:
-- **NVIDIA GPU** — proprietary driver, modesetting engedélyezve
-- **Suspend/resume** — teljesen működőképes:
-  - `hardware.nvidia.powerManagement.enable = true` engedélyezi az `nvidia-suspend`, `nvidia-resume` és `nvidia-hibernate` systemd service-eket
-  - `nvidia.NVreg_EnableS0ixPowerManagement=1` kernel paraméter az S0ix alapú suspend helyes működéséhez
+- **OpenGL / graphics** — `hardware.graphics` engedélyezve 32-bites támogatással (Steam / 32-bites appokhoz)
 - Bluetooth + Blueman
 - fwupd (firmware frissítések)
 - power-profiles-daemon (teljesítmény profilok)
 - Steam hardver támogatás (kontrollerek)
+
+### `modules/nvidia.nix`
+NVIDIA GPU konfiguráció:
+- Proprietary driver, modesetting engedélyezve
+- `powerManagement.enable = false` (finegrained is kikapcsolva — csak Optimus PRIME-hoz kellene)
+- `nvidiaSettings = true`
+- `package = stable`
+- `nvidia.NVreg_EnableS0ixPowerManagement=1` kernel paraméter
 
 ### `modules/desktop.nix`
 Asztali környezet:
@@ -57,6 +62,11 @@ Felhasználó: `doomhyena`
 - Csoportok: `wheel`, `docker`, `vboxusers`
 - Telepített csomag: Kate szövegszerkesztő
 
+### `modules/home.nix`
+Home-manager integráció:
+- `home-manager.nixosModules.home-manager` import
+- **Vencord Catppuccin Mocha** téma automatikus beállítása (`~/.config/Vencord/settings/settings.json`)
+
 ### `modules/virtualisation.nix`
 - Docker (automatikus indítás bootkor)
 - VirtualBox
@@ -66,16 +76,12 @@ Felhasználó: `doomhyena`
 - PostgreSQL 16
 - MariaDB (MySQL-kompatibilis)
 
-### `modules/networking-tools.nix`
-- `nix-ld` (előre lefordított binárisok futtatásához)
-- `locate` fájlkereső szolgáltatás
-
 ### `modules/dev-packages.nix`
 Fejlesztői eszközök és alkalmazások:
 
 | Kategória | Csomagok |
 |---|---|
-| Verziókezelés | git, gh |
+| Verziókezelés | git |
 | Böngésző | Brave |
 | Szerkesztők / IDE | VS Code, IntelliJ IDEA CE |
 | Terminal | WezTerm, btop, fastfetch, oh-my-posh |
@@ -86,11 +92,10 @@ Fejlesztői eszközök és alkalmazások:
 | Python | Python 3.12, pip |
 | Kubernetes | kubectl, Helm, kind, k9s |
 | Adatbázis GUI | DBeaver |
-| API | Postman |
 | Játékfejlesztés | Godot 4 |
 | Kommunikáció | Discord |
 | Zene | Spotify |
-| Egyéb | LibreOffice, winboat, Claude Code, wget, unzip, spicetify-cli |
+| Egyéb | LibreOffice, winboat, Claude Code, wget, unzip, spicetify-cli, cmatrix, flatpak, wl-clipboard |
 
 ### `modules/spicetify.nix`
 Spotify testreszabás (`spicetify-nix` flake):

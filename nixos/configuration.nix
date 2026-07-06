@@ -9,7 +9,6 @@
     ./modules/users.nix
     ./modules/virtualisation.nix
     ./modules/databases.nix
-    ./modules/networking-tools.nix
     ./modules/spicetify.nix
     ./modules/dev-packages.nix
     ./modules/home.nix

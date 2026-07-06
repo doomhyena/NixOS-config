@@ -2,41 +2,39 @@
 
 {
   environment.systemPackages = with pkgs; [
-    git
-    gh
-    wget
-    unzip
-    brave
-    vscode
-    jetbrains.idea-oss
-    oh-my-posh
-    fastfetch
-    wezterm
-    dotnet-sdk_8
-    go
-    maven
-    gradle
-    nodejs_22
-    pnpm
-    typescript
-    python312
-    python312Packages.pip
-    kubectl
-    kubernetes-helm
-    kind
-    k9s
-    godot_4
-    dbeaver-bin
-    postman
+    btop 
+    brave 
+    claude-code 
+    cmatrix 
+    dbeaver-bin 
     discord
-    spicetify-cli
-    winboat
-    libreoffice
-    claude-code
+    dotnet-sdk_8 
+    fastfetch
+    flatpak
+    git 
+    godot_4 
+    go gradle 
+    jetbrains.idea-oss 
+    k9s 
+    kubectl 
+    kubernetes-helm 
+    kind 
+    libreoffice 
+    maven 
+    nodejs_22 
+    oh-my-posh 
+    pnpm 
+    python312 
+    python312Packages.pip
+    spicetify-cli 
     spotify
-    btop
-    vencord
-    cmatrix
+    typescript 
+    unzip 
+    wezterm 
+    wget 
+    winboat 
+    wl-clipboard 
+    vscode
   ];
 
   programs.java = {
