@@ -29,18 +29,18 @@
     pnpm 
     python312 
     python312Packages.pip
+    simple-scan
     spicetify-cli 
     spotify
     teams-for-linux
-    typescript 
+    typescript
+    unrar
     unzip 
     wezterm 
     wget 
     winboat 
     wl-clipboard 
     vscode
-
-    simple-scan
   ];
 
   programs.java = {
