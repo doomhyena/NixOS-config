@@ -9,6 +9,8 @@
       "wheel"
       "docker"
       "vboxusers"
+      "scanner"
+      "lp"
     ];
     packages = with pkgs; [
       kdePackages.kate

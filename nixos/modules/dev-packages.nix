@@ -3,9 +3,12 @@
 {
   environment.systemPackages = with pkgs; [
     btop 
-    brave 
+    brave
+    canon-capt
+    canon-cups-ufr2
     claude-code 
-    cmatrix 
+    cmatrix
+    cnijfilter2
     dbeaver-bin 
     discord
     dotnet-sdk_8 
@@ -28,6 +31,7 @@
     python312Packages.pip
     spicetify-cli 
     spotify
+    teams-for-linux
     typescript 
     unzip 
     wezterm 
@@ -35,6 +39,8 @@
     winboat 
     wl-clipboard 
     vscode
+
+    simple-scan
   ];
 
   programs.java = {

@@ -117,7 +117,8 @@ boot.kernelParams = [
 ## Usage
 
 ```bash
-sudo nixos-rebuild switch --flake .#nixos
+git -C /etc/nixos add -A
+sudo nixos-rebuild switch -flake .
 ```
 
 Run from inside the `nixos/` directory, or pass the full path:

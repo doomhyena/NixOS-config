@@ -1,8 +1,4 @@
-{
-  pkgs,
-  username,
-  ...
-}:
+{ pkgs, ... }:
 {
   virtualisation.docker = {
     enable = true;
@@ -10,6 +6,4 @@
       docker
     ];
   };
-
-  users.users.${username}.extraGroups = [ "docker" ];
 }
