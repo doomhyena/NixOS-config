@@ -24,14 +24,16 @@ Built modularly to keep things maintainable and easy to extend.
     │   └── cat-vibin.png      # SDDM login background
     ├── modules/
     │   ├── databases.nix          # PostgreSQL, MariaDB
-    │   ├── desktop.nix            # Plasma6, SDDM, PipeWire, fonts, printing
-    │   ├── dev-packages.nix       # dev tools and languages
-    │   ├── hardware.nix           # NVIDIA, bluetooth, power management, fwupd
-    │   ├── networking-tools.nix   # nix-ld, locate
+    │   ├── desktop.nix            # Plasma6, SDDM, PipeWire, Flatpak, fonts, printing
+    │   ├── dev-packages.nix       # dev tools, languages, apps
+    │   ├── docker.nix             # Docker daemon
+    │   ├── hardware.nix           # bluetooth, scanner, avahi, power management, fwupd
+    │   ├── home.nix               # Home Manager (git config, Vencord theme)
+    │   ├── nvidia.nix             # NVIDIA driver and power management
     │   ├── spicetify.nix          # Spotify customization via spicetify-nix
-    │   ├── system.nix             # boot, locale, nix settings, direnv, gpg
+    │   ├── system.nix             # boot, locale, nix settings, direnv, gpg, nix-ld
     │   ├── users.nix              # user account definition(s)
-    │   └── virtualisation.nix     # Docker, VirtualBox, Steam
+    │   └── virtualisation.nix     # VirtualBox, Steam, GameMode
     ├── configuration.nix
     ├── hardware-configuration.nix
     ├── flake.nix
@@ -49,7 +51,8 @@ Built modularly to keep things maintainable and easy to extend.
 **Desktop environment**
 - KDE Plasma 6 on Wayland, custom SDDM theme (`where-is-my-sddm-theme`) with a custom background image
 - PipeWire audio (instead of PulseAudio), Hungarian keyboard layout
-- CUPS printing support
+- CUPS printing support (with Canon UFR2 and CNIJFilter2 drivers)
+- Flatpak + xdg-desktop-portal-gtk
 - gvfs + udisks2 for file manager integration and disk management
 - JetBrains Mono Nerd Font
 
@@ -64,12 +67,12 @@ Built modularly to keep things maintainable and easy to extend.
 - Python 3.12 + pip
 - Kubernetes: kubectl, helm, kind, k9s
 - Godot 4
-- Editors: VS Code, IntelliJ IDEA (Community), Kate, WezTerm
-- DBeaver, Postman, GitHub CLI
+- Editors: VS Code, IntelliJ IDEA (Community), WezTerm
+- DBeaver, GitHub CLI (git)
+- Docker + docker-compose + lazydocker
 - direnv (automatic dev shell activation)
 - GnuPG agent with SSH support
 - nix-ld (run unpatched dynamic binaries)
-- locate (file search daemon)
 - Claude Code
 
 **Music**
@@ -80,39 +83,60 @@ Built modularly to keep things maintainable and easy to extend.
 - MariaDB (MySQL-compatible)
 
 **Virtualisation / Gaming**
-- Docker (enabled on boot)
+- Docker (enabled on boot, separate `docker.nix`)
 - VirtualBox
 - Steam (with Remote Play + dedicated server ports, Steam hardware/controller support)
+- GameMode (CPU/GPU performance boost while gaming)
+- MangoHUD (in-game overlay: FPS, temps, GPU usage)
 
 **Apps**
 - Brave browser
-- Discord
+- Vesktop (Discord with Vencord — Catppuccin Mocha theme auto-configured)
 - LibreOffice
+- Obsidian (note-taking)
+- Netflix
+- Teams for Linux
 - winboat
 - btop
+- simple-scan (scanner UI)
+- unrar, cmatrix
+
+**Home Manager**
+- Git configured with name, email, and useful aliases (`co`, `st`, `br`, `lg`)
+- Vencord `settings.json` auto-bootstrapped with the Catppuccin Mocha Discord theme
 
 **System**
-- systemd-boot + Plymouth boot splash
+- systemd-boot + Plymouth boot splash (max 10 generations in boot menu)
 - Automatic GC (weekly, deletes generations older than 14 days)
 - Nix store auto-optimisation
 - Flakes + nix-command enabled
+- Binary caches: `cache.nixos.org` + `nix-community.cachix.org`
+- Automatic weekly NixOS upgrade (no auto-reboot)
 - zram swap
 - fwupd (firmware updates via LVFS)
+- fstrim (periodic SSD TRIM)
 - power-profiles-daemon (performance / balanced / power-saver profiles)
+- `NIXOS_OZONE_WL=1` set system-wide for Electron/Chromium Wayland support
+
+**Hardware**
+- SANE scanner support (`sane-airscan` for driverless network/USB scanners)
+- ipp-usb (IPP-over-USB printing/scanning)
+- Avahi (mDNS / network service discovery, firewall UDP 5353 open)
+- Bluetooth + Blueman
 
 ## NVIDIA notes
 
 The NVIDIA suspend/resume hard freeze is **fixed**. The solution:
 
 ```nix
-hardware.nvidia.powerManagement.enable = true;  # enables nvidia-suspend/resume/hibernate systemd services
+hardware.nvidia.powerManagement.enable = true;
 
-boot.kernelParams = [
-  "nvidia.NVreg_EnableS0ixPowerManagement=1"
-];
+boot.extraModprobeConfig = ''
+  options nvidia NVreg_PreserveVideoMemoryAllocations=1 NVreg_TemporaryFilePath=/var/tmp
+'';
 ```
 
-`NVreg_EnableS0ixPowerManagement=1` enables modern S0ix (s2idle) power management for the NVIDIA driver, which prevents the GPU from hanging on wake.
+`NVreg_PreserveVideoMemoryAllocations=1` keeps VRAM contents intact across suspend/resume, which prevents the GPU from hanging on wake. `NVreg_TemporaryFilePath` points the driver's temp storage to `/var/tmp` (persists across suspend, unlike `/tmp`).
 
 ## Usage
 
