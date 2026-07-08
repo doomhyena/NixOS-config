@@ -4,13 +4,12 @@
   environment.systemPackages = with pkgs; [
     btop 
     brave
-    canon-capt
     canon-cups-ufr2
     claude-code 
     cmatrix
     cnijfilter2
-    dbeaver-bin 
-    discord
+    docker-compose
+    dbeaver-bin
     dotnet-sdk_8 
     fastfetch
     flatpak
@@ -18,19 +17,22 @@
     godot_4 
     go gradle 
     jetbrains.idea-oss 
-    k9s 
-    kubectl 
-    kubernetes-helm 
-    kind 
-    libreoffice 
+    k9s
+    kubectl
+    kubernetes-helm
+    kind
+    lazydocker
+    libreoffice
+    mangohud
     maven 
-    nodejs_22 
+    netflix
+    nodejs_22
+    obsidian
     oh-my-posh 
     pnpm 
     python312 
     python312Packages.pip
     simple-scan
-    spicetify-cli 
     spotify
     teams-for-linux
     typescript
@@ -40,7 +42,9 @@
     wget 
     winboat 
     wl-clipboard 
+    vesktop
     vscode
+    kdePackages.isoimagewriter
   ];
 
   programs.java = {

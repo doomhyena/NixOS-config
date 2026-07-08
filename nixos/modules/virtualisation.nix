@@ -1,12 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = true;
-  };
-
   virtualisation.virtualbox.host.enable = true;
+
+  programs.gamemode.enable = true;
 
   programs.steam = {
     enable = true;

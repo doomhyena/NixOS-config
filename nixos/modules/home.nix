@@ -8,6 +8,20 @@
     users.doomhyena = { lib, ... }: {
       home.stateVersion = "26.05";
 
+      programs.git = {
+        enable = true;
+        settings = {
+          user.name = "Csontos Kincső Anasztázia";
+          user.email = "contact@doomhyena.hu";
+          alias = {
+            co = "checkout";
+            st = "status";
+            br = "branch";
+            lg = "log --oneline --graph --decorate --all";
+          };
+        };
+      };
+
       home.activation.vencordCatppuccin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         if [[ ! -f "$HOME/.config/Vencord/settings/settings.json" ]]; then
           mkdir -p "$HOME/.config/Vencord/settings"

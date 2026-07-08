@@ -27,4 +27,6 @@
   services.power-profiles-daemon.enable = true;
 
   hardware.steam-hardware.enable = true;
+
+  services.fstrim.enable = true;
 }
