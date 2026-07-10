@@ -5,7 +5,9 @@
     btop 
     brave
     canon-cups-ufr2
-    claude-code 
+    ccacheWrapper
+    claude-code
+    cmakeCurses
     cmatrix
     cnijfilter2
     docker-compose
@@ -14,7 +16,6 @@
     fastfetch
     flatpak
     git 
-    godot_4 
     go gradle 
     jetbrains.idea-oss 
     k9s
@@ -23,6 +24,7 @@
     kind
     lazydocker
     libreoffice
+    localsend
     mangohud
     maven 
     netflix
@@ -35,16 +37,15 @@
     simple-scan
     spotify
     teams-for-linux
+    torrent7z
     typescript
     unrar
     unzip 
-    wezterm 
     wget 
     winboat 
     wl-clipboard 
     vesktop
     vscode
-    kdePackages.isoimagewriter
   ];
 
   programs.java = {

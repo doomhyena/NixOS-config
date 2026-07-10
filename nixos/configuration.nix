@@ -14,6 +14,7 @@
     ./modules/system.nix
     ./modules/users.nix
     ./modules/virtualisation.nix
+    ./modules/brave-policies.nix
   ];
 
   system.stateVersion = "26.05";
