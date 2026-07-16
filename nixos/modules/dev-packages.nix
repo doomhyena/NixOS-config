@@ -17,7 +17,8 @@
     flatpak
     git 
     go gradle 
-    jetbrains.idea-oss 
+    jetbrains.idea-oss
+    jetbrains.rider
     k9s
     kubectl
     kubernetes-helm
@@ -27,7 +28,6 @@
     localsend
     mangohud
     maven 
-    netflix
     nodejs_22
     obsidian
     oh-my-posh 
