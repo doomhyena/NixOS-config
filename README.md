@@ -8,7 +8,7 @@ Built modularly to keep things maintainable and easy to extend.
 - **Machine:** Lenovo LOQ
 - **CPU:** AMD Ryzen 5
 - **GPU:** NVIDIA RTX 3050 (proprietary driver)
-- **DE:** KDE Plasma 6 (Wayland), with SDDM display manager
+- **DE:** COSMIC Desktop (Wayland)
 - **Shell:** zsh + oh-my-posh (Catppuccin theme)
 
 ## Structure
@@ -21,10 +21,10 @@ Built modularly to keep things maintainable and easy to extend.
 │   └── Zsh/                   # .zshrc and related config
 └── nixos/
     ├── assets/
-    │   └── cat-vibin.png      # SDDM login background
+    │   └── cat-vibin.png      # login background
     ├── modules/
     │   ├── databases.nix          # PostgreSQL, MariaDB
-    │   ├── desktop.nix            # Plasma6, SDDM, PipeWire, Flatpak, fonts, printing
+    │   ├── desktop.nix            # COSMIC Desktop, PipeWire, Flatpak, fonts, printing
     │   ├── dev-packages.nix       # dev tools, languages, apps
     │   ├── docker.nix             # Docker daemon
     │   ├── hardware.nix           # bluetooth, scanner, avahi, power management, fwupd
@@ -49,7 +49,7 @@ Built modularly to keep things maintainable and easy to extend.
 ## What's included
 
 **Desktop environment**
-- KDE Plasma 6 on Wayland, custom SDDM theme (`where-is-my-sddm-theme`) with a custom background image
+- COSMIC Desktop on Wayland
 - PipeWire audio (instead of PulseAudio), Hungarian keyboard layout
 - CUPS printing support (with Canon UFR2 and CNIJFilter2 drivers)
 - Flatpak + xdg-desktop-portal-gtk
