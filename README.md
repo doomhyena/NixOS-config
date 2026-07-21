@@ -5,9 +5,9 @@ Built modularly to keep things maintainable and easy to extend.
 
 ## Hardware
 
-- **Machine:** Lenovo LOQ
-- **CPU:** AMD Ryzen 5
-- **GPU:** NVIDIA RTX 3050 (proprietary driver)
+- **Machine:** Lenovo LOQ (15ARP9)
+- **CPU:** AMD Ryzen 5 7235HS
+- **GPU:** GeForce RTX 3050 6GB Laptop GPU (proprietary driver)
 - **DE:** COSMIC Desktop (Wayland)
 - **Shell:** zsh + oh-my-posh (Catppuccin theme)
 
