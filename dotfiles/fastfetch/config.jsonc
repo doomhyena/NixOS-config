@@ -23,12 +23,14 @@
         {
             "type": "cpu",
             "key": "│ ├󰻠 ",
-            "keyColor": "green"
+            "keyColor": "green",
+            "format": "{name}"
         },
         {
             "type": "gpu",
             "key": "│ ├󰍹 ",
-            "keyColor": "green"
+            "keyColor": "green",
+            "format": "{name}"
         },
         {
             "type": "memory",
@@ -67,7 +69,8 @@
         {
             "type": "packages",
             "key": "│ ├󰏗 ",
-            "keyColor": "yellow"
+            "keyColor": "yellow",
+            "format": "{all}"
         },
         {
             "type": "shell",

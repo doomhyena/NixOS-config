@@ -126,17 +126,7 @@ Built modularly to keep things maintainable and easy to extend.
 
 ## NVIDIA notes
 
-The NVIDIA suspend/resume hard freeze is **fixed**. The solution:
-
-```nix
-hardware.nvidia.powerManagement.enable = true;
-
-boot.extraModprobeConfig = ''
-  options nvidia NVreg_PreserveVideoMemoryAllocations=1 NVreg_TemporaryFilePath=/var/tmp
-'';
-```
-
-`NVreg_PreserveVideoMemoryAllocations=1` keeps VRAM contents intact across suspend/resume, which prevents the GPU from hanging on wake. `NVreg_TemporaryFilePath` points the driver's temp storage to `/var/tmp` (persists across suspend, unlike `/tmp`).
+The NVIDIA suspend/resume hard freeze is **not fixed**.
 
 ## Usage
 

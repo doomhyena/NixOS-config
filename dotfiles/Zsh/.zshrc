@@ -8,7 +8,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="dracula"
 
-eval "$(oh-my-posh init zsh --config ~/.config/OhMyPosh/ohmyposh_dracula.json)"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -103,3 +102,6 @@ plugins=(git nvm)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias vim=nvim
+eval "$(oh-my-posh init zsh --config ~/.config/OhMyPosh/ohmyposh_dracula.json)"
+fastfetch
+export PATH="$PATH:/home/doomhyena/go/bin"

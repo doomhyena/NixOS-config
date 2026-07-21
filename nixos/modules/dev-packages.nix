@@ -16,12 +16,14 @@
     fastfetch
     flatpak
     git 
-    go gradle 
+    go 
+    gradle 
     jetbrains.idea-oss
     jetbrains.rider
     k9s
     kubectl
     kubernetes-helm
+    kdePackages.korganizer
     kind
     lazydocker
     libreoffice
@@ -32,17 +34,21 @@
     obsidian
     oh-my-posh 
     pnpm 
+    pkg-config
+    gtk3
     python312 
     python312Packages.pip
     simple-scan
     spotify
     teams-for-linux
+    thunderbird
     torrent7z
     typescript
     unrar
     unzip 
     wget 
-    winboat 
+    winboat
+    webkitgtk_6_0
     wl-clipboard 
     vesktop
     vscode
