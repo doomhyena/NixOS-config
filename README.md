@@ -132,7 +132,7 @@ The NVIDIA suspend/resume hard freeze is **not fixed**.
 
 ```bash
 git -C /etc/nixos add -A
-sudo nixos-rebuild switch -flake .
+sudo nixos-rebuild switch
 ```
 
 Run from inside the `nixos/` directory, or pass the full path:
