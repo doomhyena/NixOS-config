@@ -9,13 +9,17 @@
     claude-code
     cmakeCurses
     cmatrix
+    cmake
     cnijfilter2
     docker-compose
     dbeaver-bin
     dotnet-sdk_8 
     fastfetch
     flatpak
-    git 
+    gdb
+    git
+    gnumake
+    gcc
     go 
     gradle 
     jetbrains.idea-oss
