@@ -13,6 +13,7 @@
     cnijfilter2
     docker-compose
     dbeaver-bin
+    dpkg
     dotnet-sdk_8 
     fastfetch
     flatpak
@@ -34,11 +35,13 @@
     localsend
     mangohud
     maven 
+    mono
     nodejs_22
     obsidian
     oh-my-posh 
     pnpm 
     pkg-config
+    gtk2
     gtk3
     python312 
     python312Packages.pip
