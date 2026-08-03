@@ -58,6 +58,8 @@
     webkitgtk_6_0
     wl-clipboard 
     vesktop
+    vimPlugins.LazyVim
+    vim
     vscode
   ];
 
