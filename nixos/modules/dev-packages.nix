@@ -36,6 +36,7 @@
     mangohud
     maven 
     mono
+    neovim
     nodejs_22
     obsidian
     oh-my-posh 
@@ -59,7 +60,6 @@
     wl-clipboard 
     vesktop
     vimPlugins.LazyVim
-    vim
     vscode
   ];
 
