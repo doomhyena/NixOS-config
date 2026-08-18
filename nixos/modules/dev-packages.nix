@@ -44,6 +44,7 @@
     pkg-config
     gtk2
     gtk3
+    prismlauncher
     python312 
     python312Packages.pip
     simple-scan
