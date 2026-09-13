@@ -126,7 +126,10 @@ Built modularly to keep things maintainable and easy to extend.
 
 ## NVIDIA notes
 
-The NVIDIA suspend/resume hard freeze is **not fixed**.
+Suspend/resume freeze mitigation is enabled via:
+- NVIDIA video memory preservation (`NVreg_PreserveVideoMemoryAllocations=1`)
+- Temporary VRAM dump path (`NVreg_TemporaryFilePath=/var/tmp`)
+- Proprietary NVIDIA kernel module (`hardware.nvidia.open = false`)
 
 ## Usage
 
