@@ -130,6 +130,8 @@ Suspend/resume freeze mitigation is enabled via:
 - NVIDIA video memory preservation (`NVreg_PreserveVideoMemoryAllocations=1`)
 - Temporary VRAM dump path (`NVreg_TemporaryFilePath=/var/tmp`)
 - Proprietary NVIDIA kernel module (`hardware.nvidia.open = false`)
+- Deep sleep default (`mem_sleep_default=deep`)
+- NVIDIA persistence daemon (`hardware.nvidia.persistenced = true`)
 
 ## Usage
 

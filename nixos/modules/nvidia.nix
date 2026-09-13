@@ -10,6 +10,7 @@
     "nvidia-drm.modeset=1"
     "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
     "nvidia.NVreg_TemporaryFilePath=/var/tmp"
+    "mem_sleep_default=deep"
   ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -23,6 +24,7 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
+    persistenced = true;
 
     open = false;
     nvidiaSettings = true;
